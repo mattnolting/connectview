@@ -1,0 +1,5 @@
+.idea/
+.jshintrc
+node_modules
+.sass-cache/
+Gemfile.lock
