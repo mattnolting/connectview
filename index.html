@@ -12,37 +12,73 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="assets/js/vendors/jquery.fittext.js"></script>
 	<script type="text/javascript" src="assets/js/vendors/modernizr.custom.js"></script>
-	<link rel="stylesheet" href="assets/css/style.min.css">
-
-
+	<link rel="stylesheet" href="assets/css/main.min.css">
 </head>
 
 <body>
+	<main class="wrap container content" role="main">
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="speech-bubble blue">
+					<h1>
+						<span id="line1">Tell me how to get</span>
+						<span id="line2">a free 8-point</span>
+						<span id="line3">video audit and a</span>
+						<span id="line4">chance to win a swivl</span>
+					</h1>
+				</div>
+				<blockquote class="quote">
+					ConnectVIEW has been a nice sanity check for us. They are a true partner and help us plan around the opportunities that are out there.”
+					- Cris Harshman
+					Asheville-Buncombe Technical
+					Community College
+				</blockquote>
 
-	<header class="banner masthead" role="banner">
-		<div class="container">
-			<div class="row">
-				<nav role="navigation">
+				<blockquote>
+					We get to expand the resources and experiences available outside the four walls of the classroom.”
+					- Ross Friebel
+					Director of Instructional Technology
+					Onslow County Schools
+				</blockquote>
+			</div>
+			<div class="col-sm-6">
 
-				</nav>
+				<a id="logo" class="logo" href="#">
+					<img src="assets/img/l_connectview.png" alt="ConnectView Home" />
+				</a>
+
+				<div class="speech-bubble green">
+					<h1>
+						<span id="line1">Tell me how to get</span>
+						<span id="line2">a free 8-point</span>
+						<span id="line3">video audit and a</span>
+						<span id="line4">chance to win a swivl</span>
+					</h1>
+				</div>
+
+				<form id="signup" class="signup" method="post" action="http://app.prospectmail.com/box.php">
+					<input type='text' name='field[1577,0]' placeholder="Name" />
+					<input type="text" name="email" placeholder="Email" />
+					<input type='text' name='field[1578,0]' placeholder='School Name' />
+					<div class="captcha">
+						<img border="1" align="middle" src="http://app.prospectmail.com/ac_global/scripts/randomimage.php" /><br />
+						<input type="text" name="imgverify" id="imgverify" placeholder="Enter the text as it appears on the image" />
+					</div>
+
+					<input type="hidden" name="nlbox[]" value="567" />
+					<input type="hidden" name="funcml" value="add" />
+
+					<input type="hidden" name="p" value="1006" />
+					<input type="hidden" name="_charset" value="utf-8" />
+					<input class="btn submit" type="submit" value="Submit" />
+				</form>
 			</div>
 		</div>
-	</header>
-
-
-	<main class="wrap container page" role="main">
-
 	</main>
 
-	<footer class="content-info" role="contentinfo">
-
-	</footer>
-
-	<script type="text/javascript">
-	</script>
-
-	<script type="text/javascript" src="assets/js/script.min.js"></script>
+	<script type="text/javascript" src="assets/js/scripts.min.js"></script>
 
 </body>
 </html>

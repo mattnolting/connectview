@@ -68,8 +68,8 @@ module.exports = function(grunt) {
     watch: {
       sass: {
         files: [
-          'assets/sass/**/*.scss',
-          'assets/sass/bootstrap/*.scss'
+          'assets/sass/**/*.scss'
+          //'assets/sass/bootstrap/*.scss'
         ],
         // tasks: ['sass', 'version']
         tasks: ['sass']
@@ -79,21 +79,21 @@ module.exports = function(grunt) {
           '<%= jshint.all %>'
         ],
         // tasks: ['jshint', 'uglify', 'version']
-        tasks: ['jshint', 'uglify']
+        tasks: ['uglify']
       },
-      livereload: {
-        // Browser live reloading
-        // https://github.com/gruntjs/grunt-contrib-watch#live-reloading
-        options: {
-          livereload: false
-        },
-        files: [
-          'assets/css/main.min.css',
-          'assets/js/scripts.min.js',
-          'templates/*.php',
-          '*.php'
-        ]
-      }
+      //livereload: {
+      //  // Browser live reloading
+      //  // https://github.com/gruntjs/grunt-contrib-watch#live-reloading
+      //  options: {
+      //    livereload: false
+      //  },
+      //  files: [
+      //    'assets/css/main.min.css',
+      //    'assets/js/scripts.min.js',
+      //    'templates/*.php',
+      //    '*.php'
+      //  ]
+      //}
     },
     clean: {
       dist: [
@@ -103,13 +103,13 @@ module.exports = function(grunt) {
     }
   });
 
-  // Load tasks
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-sass');
-  //grunt.loadNpmTasks('grunt-wp-version');
+	// Load tasks
+	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-sass');
+	//grunt.loadNpmTasks('grunt-wp-version');
 
   // Register tasks
   grunt.registerTask('default', [
@@ -121,5 +121,4 @@ module.exports = function(grunt) {
   grunt.registerTask('dev', [
     'watch'
   ]);
-
 };

@@ -1,3 +1,126 @@
+$blue:      #1ea1e0;
+$green:     #6eb43f;
+$red:       #d2232a;
+
+.logo {
+	@include rem('margin-top', 20px);
+	@include rem('margin-bottom', 40px);
+	display: block;
+	text-align: center;
+
+	img {
+		display: inline-block;
+	}
+}
+
+.signup {
+	@include rem('padding', 40px 30px);
+	background: $blue;
+
+	@include media-query (md) {
+		width: 80%;
+		margin: 0 10%;
+	}
+	
+	input {
+		width: 100%;
+		@include rem('margin-bottom', 17px);
+		@include rem('padding', 10px 6px);
+		background: #fff;
+		@include font-size(14px);
+		color: #626366;
+
+		&.btn {
+			@extend .btn;
+			@include rem('margin-top', 4px);
+		}
+	}
+}
+
+.btn {
+	width: auto;
+	margin: 0 auto;
+	@include rem('padding', 8px 34px);
+	display: block;
+	text-transform: uppercase;
+	color: #fff;
+	background: $blue;
+	@include border-radius(8px);
+	@include font-size(18px);
+}
+
+
+.btn.submit {
+	background: $red;
+}
+
 .content {
 
+}
+
+.speech-bubble {
+	position: relative;
+	@include rem('margin-bottom', 34px);
+	@include rem('padding', 14px 8px);
+
+	h1 {
+		color: #fff;
+		text-transform: uppercase;
+
+		span {
+			display: inline-block;
+			width: 100%;
+
+			&:nth-child(even) {
+				font-weight: 500;
+			}
+
+			&:nth-child(odd) {
+				font-weight: 300;
+			}
+		}
+	}
+
+	&.green {
+		background: $green;
+
+		&:after {
+			border-left-color: $green;
+		}
+	}
+
+	&.blue {
+		background: $blue;
+
+		&:after {
+			border-left-color: $blue;
+		}
+	}
+
+	&:after {
+		content: '';
+		position: absolute;
+		bottom: -24px;
+		left: 50%;
+		border-right: 12px solid transparent;
+		border-bottom: 26px solid transparent;
+		border-left: 52px solid #1EA1E0;
+	}
+}
+
+blockquote {
+	position: relative;
+	@include font-size(18px);
+	border: none;
+
+	@include media-query (md) {
+		@include rem('padding', 0 10%);
+	}
+
+	&:before {
+		content: '\0022';
+		position: absolute;
+		left: 0;
+		top: 12px;
+	}
 }
