@@ -1,6 +1,7 @@
-$blue:      #1ea1e0;
-$green:     #6eb43f;
-$red:       #d2232a;
+$blue:          #0f6cb6;
+$blue_light:    #1ea1e0;
+$green:         #6eb43f;
+$red:           #d2232a;
 
 .logo {
 	@include rem('margin-top', 20px);
@@ -14,8 +15,8 @@ $red:       #d2232a;
 }
 
 .signup {
-	@include rem('padding', 40px 30px);
-	background: $blue;
+	@include rem('padding', 40px 30px 30px);
+	background: $blue_light;
 
 	@include media-query (md) {
 		width: 80%;
@@ -35,22 +36,30 @@ $red:       #d2232a;
 			@include rem('margin-top', 4px);
 		}
 	}
+
+	.form-line-active {
+		background: none;
+	}
 }
 
 .btn {
 	width: auto;
 	margin: 0 auto;
 	@include rem('padding', 8px 34px);
-	display: block;
 	text-transform: uppercase;
 	color: #fff;
 	background: $blue;
 	@include border-radius(8px);
 	@include font-size(18px);
+
+	&:hover {
+		color: #fff;
+	}
 }
 
 
-.btn.submit {
+.btn.btn-primary {
+	margin-top: 10px;
 	background: $red;
 }
 
@@ -61,11 +70,13 @@ $red:       #d2232a;
 .speech-bubble {
 	position: relative;
 	@include rem('margin-bottom', 34px);
-	@include rem('padding', 14px 8px);
+	@include rem('padding', 14px 22px);
 
 	h1 {
+		margin: 0;
 		color: #fff;
 		text-transform: uppercase;
+		line-height: 1;
 
 		span {
 			display: inline-block;
@@ -109,13 +120,10 @@ $red:       #d2232a;
 }
 
 blockquote {
+	font-style: italic;
 	position: relative;
-	@include font-size(18px);
+	@include font-size(20px);
 	border: none;
-
-	@include media-query (md) {
-		@include rem('padding', 0 10%);
-	}
 
 	&:before {
 		content: '\0022';
@@ -123,4 +131,94 @@ blockquote {
 		left: 0;
 		top: 12px;
 	}
+
+	cite, span {
+		font-style: italic;
+		@include font-size(18px);
+		line-height: 1;
+		display: block;
+		margin-left: 80px;
+	}
+
+	cite {
+		margin-top: 10px;
+		position: relative;
+
+		&:before {
+			content: '\002D';
+			position: absolute;
+			left: -14px;
+		}
+	}
+
+	span {
+
+	}
+}
+
+.cta {
+	color: #fff;
+	@include rem('margin-bottom', 20px);
+	@extend %clearfix;
+
+	@include media-query (md) {
+		display: table;
+	}
+
+	strong {
+		@include font-size(18px);
+		line-height: 1;
+	}
+
+	.text {
+		@include rem('padding', 10px 20px);
+		background: #6eb43f;
+		
+		@include media-query (md) {
+			width: 80%;
+			display: table-cell;
+			vertical-align: middle;
+		}
+	}
+
+	.img {
+		width: 140px;
+		height: 140px;
+		margin: 0 auto;
+		text-align: center;
+		@include border-radius(50%);
+		background: #f6f4f2;
+		overflow: hidden;
+
+		@include media-query (md) {
+			width: auto;
+			height: 100%;
+			@include border-radius(0);
+			width: 20%;
+			display: table-cell;
+		}
+
+		img {
+			display: inline-block;
+			vertical-align: middle;
+			@include rem('margin-top', 20px);
+//			@extend %vertical-align;
+
+//			@include media-query (md) {
+//				@include transform(none);
+//				top: auto;
+//			}
+		}
+	}
+}
+
+.form-section {
+
+	li {
+		padding: 0;
+	}
+}
+
+img {
+	max-width: 100%;
 }
