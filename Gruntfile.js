@@ -15,7 +15,7 @@ module.exports = function(grunt) {
     sass: {
       dist: {
         options: {
-          style: 'compressed',
+          style: 'nested',
           compass: true,
           require: 'breakpoint',
           // Source maps are available, but require Sass 3.3.0 to be installed

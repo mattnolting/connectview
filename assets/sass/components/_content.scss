@@ -70,7 +70,8 @@ $red:           #d2232a;
 .speech-bubble {
 	position: relative;
 	@include rem('margin-bottom', 34px);
-	@include rem('padding', 14px 22px);
+	@include rem('padding', 28px 22px);
+	color: #fff;
 
 	h1 {
 		margin: 0;
@@ -82,14 +83,19 @@ $red:           #d2232a;
 			display: inline-block;
 			width: 100%;
 
-			&:nth-child(even) {
-				font-weight: 500;
-			}
-
-			&:nth-child(odd) {
-				font-weight: 300;
-			}
+			&:nth-child(1), &:nth-child(3) { font-weight: 300; }
+			&:nth-child(2), &:nth-child(4), &:nth-child(5), &:nth-child(6) { font-weight: 500; }
 		}
+	}
+
+	p {
+		margin-top: 14px;
+		@include font-size(18px);
+		text-align: center;
+		color: #fff;
+
+		@include media-query (sm) { @include font-size(20px); }
+		@include media-query (md) { @include font-size(24px); }
 	}
 
 	&.green {
@@ -124,6 +130,8 @@ blockquote {
 	position: relative;
 	@include font-size(20px);
 	border: none;
+
+	@include media-query (md) { margin-top: 160px; }
 
 	&:before {
 		content: '\0022';
