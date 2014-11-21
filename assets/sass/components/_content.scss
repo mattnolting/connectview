@@ -12,6 +12,10 @@ $red:           #d2232a;
 	img {
 		display: inline-block;
 	}
+
+	&.mobile-logo {
+		margin-top: 0;
+	}
 }
 
 .signup {
@@ -233,13 +237,23 @@ img {
 
 
 .ipad {
-	width: 466px;
-	height: 556px;
-	@include rem('padding', 76px 70px 60px);
 	margin-bottom: 20px;
-	display: inline-block;
+	@include rem('padding', 40px);
 	color: #fff;
 	text-align: left;
+	background-size: cover;
+
+	@include media-query (xs) {
+		@include rem('padding', 50px 60px);
+	}
+
+	@include media-query (sm) {
+		width: 466px;
+		height: 556px;
+		@include rem('padding', 76px 70px 60px);
+		display: inline-block;
+		background-size: auto;
+	}
 
 	h2 {
 		@include rem('padding', 0 0 12px);
@@ -264,24 +278,25 @@ img {
 
 		}
 
-		&.business {
+		&.business { li { margin-bottom: 18px; } }
 
-			li {
-				margin-bottom: 18px;
-			}
-		}
-
-		span {
-			font-weight: 600;
-		}
+		span { font-weight: 600; }
 	}
 
 	&.ipad-education {
-		background: url("../img/ipad_education.png");
+		background-image: url("../img/ipad_education-base.jpg");
+
+		@include media-query (sm) {
+			background-image: url("../img/ipad_education.png");
+		}
 	}
 
 	&.ipad-business {
-		background: url("../img/ipad_business.png");
+		background-image: url("../img/ipad_business-base.jpg");
+
+		@include media-query (sm) {
+			background-image: url("../img/ipad_business.png");
+		}
 	}
 
 	.business {
